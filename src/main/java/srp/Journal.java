@@ -30,19 +30,21 @@ public class Journal {
         return String.join(System.lineSeparator(), entries);
     }
 
-    public void save(String filename) throws FileNotFoundException {
-        try(PrintStream out = new PrintStream(filename)) {
-            out.println(toString());
-        }
-    }
 
-    public void load(String filename){}
-    public void load(URL url){}
+//    public void save(String filename) throws FileNotFoundException {
+//        try(PrintStream out = new PrintStream(filename)) {
+//            out.println(toString());
+//        }
+//    }
+//
+//    public void load(String filename){}
+//    public void load(URL url){}
 }
 
-class Persistance{
+class Persistence {
     public void saveToFile(Journal journal, String filename, boolean overwrite) throws FileNotFoundException {
         if(overwrite || new File(filename).exists()){
+            //try-with-resources(auto closing for resources)
             try(PrintStream out = new PrintStream(filename)) {
                 out.println(journal);
             }
@@ -61,7 +63,7 @@ class Demo{
 
         System.out.println(j);
 
-        Persistance p = new Persistance();
+        Persistence p = new Persistence();
 
         String filename = "srp_example.txt";
         p.saveToFile(j, filename, true);
