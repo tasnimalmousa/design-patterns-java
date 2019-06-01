@@ -1,4 +1,4 @@
-package isp;
+package principles.isp;
 
 //ISP: Interface segregation principle
 //breaking the interface

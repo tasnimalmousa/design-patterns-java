@@ -1,4 +1,4 @@
-package lsp;
+package principles.lsp;
 
 //Liskov Substitution principle
 //you should be able to substitute a sub class for a base class

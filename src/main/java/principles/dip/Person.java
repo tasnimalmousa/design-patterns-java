@@ -1,11 +1,11 @@
-package dip;
+package principles.dip;
 
 import org.javatuples.Triplet;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-//dip: dependency inversion principle
+//principles.dip: dependency inversion principle
 
 //High-level modules should not depend on law-level modules
 //both should depend on abstraction
