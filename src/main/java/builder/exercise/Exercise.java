@@ -1,10 +1,10 @@
-package builder;
+package builder.exercise;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Exercise {
-    public static void main(String[] args) {
+            public static void main(String[] args) {
         CodeBuilder cb = new CodeBuilder("Person").addField("name", "String").addField("age", "int");
         System.out.println(cb);
     }
@@ -43,7 +43,7 @@ class Code {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        stringBuilder.append(String.format("public class %s{\n", className));
+        stringBuilder.append(String.format("public class %s\n{\n", className));
 
         for(Field field:fields){
             stringBuilder.append(String.format("  %s\n", field));
@@ -59,14 +59,14 @@ class Field {
     private String type;
     private String name;
 
-    public Field(String type, String name) {
-        this.type = type;
+    public Field(String name, String type) {
         this.name = name;
+        this.type = type;
     }
 
     @Override
     public String toString() {
-        return String.format("%s %s;", type, name);
+        return String.format("public %s %s;", type, name);
     }
 
     public String getType() {
