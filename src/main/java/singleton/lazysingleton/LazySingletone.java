@@ -24,7 +24,7 @@ public class LazySingletone {
 //    }
 
     //double-checked locking - lazy and thread safe
-    public static synchronized LazySingletone getInstance(){
+    public static LazySingletone getInstance(){
         if(instance == null){
             synchronized (LazySingletone.class){
                 if(instance == null){
